@@ -7,9 +7,10 @@ Below you will find a compilation of helpful notes and React.js-related resource
 ## Components
 
 - Components are the building blocks of React
+- You can think of a components as a collection of HTML, CSS, JS, and some internal data (properties / state)
+- Data is either retrieved from a component's parent component, or it's contained in the component itself
 
-
-### Fundamental Aspects of React
+## Fundamental Aspects of React
 
 JSX — Allows us to write HTML like syntax which gets
 transformed to lightweightJavaScript objects.
@@ -51,3 +52,19 @@ Events
   - onClick
   - onSubmit
   - onChange
+
+## Hello World in React
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class HelloWorld extends React.Component {
+    render() {
+        return (
+            <div>Hello World!</div>
+        );
+    }
+}
+
+ReactDOM.render(<HelloWorld />, document.getElementById('root'));
+```
