@@ -1,10 +1,8 @@
 # My First React Project
 
-Below you will find a collection of compilation of helpful notes and React.js-related resources.
+Below you will find a compilation of helpful notes and React.js-related resources.
 
-# Notes
-
-Source: https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/
+# Source: https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/
 
 ## Components
 
