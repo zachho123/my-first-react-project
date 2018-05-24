@@ -54,7 +54,8 @@ Events
   - onChange
 
 ## Hello World in React
-```
+
+```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
 
