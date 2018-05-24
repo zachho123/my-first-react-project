@@ -4,6 +4,15 @@ Below you will find a collection of compilation of helpful notes and React.js-re
 
 # Notes
 
+Source: https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/
+
+## Components
+
+- Components are the building blocks of React
+
+
+### Fundamental Aspects of React
+
 JSX — Allows us to write HTML like syntax which gets
 transformed to lightweightJavaScript objects.
 
