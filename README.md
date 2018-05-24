@@ -69,3 +69,8 @@ class HelloWorld extends React.Component {
 
 ReactDOM.render(<HelloWorld />, document.getElementById('root'));
 ```
+
+- Every component is required to have a render method
+- 'ReactDOM.render()' takes two arguments
+    1. the component to render
+    2. the DOM node where you want to render the component
