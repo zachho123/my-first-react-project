@@ -9,25 +9,10 @@ Below you will find a compilation of helpful notes and React.js-related resource
 - Components are the building blocks of React
 - You can think of a components as a collection of HTML, CSS, JS, and some internal data (properties / state)
 - Data is either retrieved from a component's parent component, or it's contained in the component itself
-
-## Hello World in React
-
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-class HelloWorld extends React.Component {
-    render() {
-        return (
-            <div>Hello World!</div>
-        );
-    }
-}
-
-ReactDOM.render(<HelloWorld />, document.getElementById('root'));
-```
-
 - Every component is required to have a render method
+  - The render method is a representation of what the real DOM should look like
+
+## ReactDOM.render()
 - ReactDOM.render() takes two arguments
     1. the component to render
     2. the DOM node where you want to render the component
@@ -60,7 +45,9 @@ ReactDOM.render(<HelloWorld />, document.getElementById('root'));
 ## Receiving State from Parent Components (props, propTypes, getDefaultProps)
 - props is the data which is passed to the child component from the parent component
 - Handle state in the highest-most parent component which needs to use the specific data
-
+- Try to always keep it so that wherever the data lives, is also where you manipulate the data
+  - All getter/setter methods for a piece of data should always be in the same component where that data was defined
+  - If you need to manipulate some piece of data outside of where that data lives, pass the getter/setter method into that component as a prop
 
 
 
