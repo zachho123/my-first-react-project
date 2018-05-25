@@ -42,17 +42,30 @@ Below you will find a compilation of helpful notes and React.js-related resource
 />
 ```
 
-## Receiving State from Parent Components (props, propTypes, getDefaultProps)
+## Receiving State from Parent Components (props, getDefaultProps)
 - props is the data which is passed to the child component from the parent component
 - Handle state in the highest-most parent component which needs to use the specific data
 - Try to always keep it so that wherever the data lives, is also where you manipulate the data
   - All getter/setter methods for a piece of data should always be in the same component where that data was defined
   - If you need to manipulate some piece of data outside of where that data lives, pass the getter/setter method into that component as a prop
 
+### defaultProps
+- Allow you to specify a default (or backup) value for certain props just in case those props are never passed into the component
 
+## Component LifeCycle
+- Each component you make will have its own lifecycle events
+  - Ex: You want to make an ajax request on the initial render to fetch some data
+  - Ex: You want to run some logic whenever your props change
 
+### componentDidMount
+- Invoked once after the initial render
+- When this method is invoked, you have access to the virtual DOM
+- You access the virtual DOM via the this.getDOMNode() method
+* This is the lifecycle event where you'll be making your AJAX requests to fetch data
 
-
+### componentWillUnmoun
+- Invoked immediately before a component is unmounted from the DOM
+* This is where you do necessary clean up
 
 
 ## Fundamental Aspects of React CheatSheet

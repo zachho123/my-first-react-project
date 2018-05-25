@@ -24,12 +24,21 @@ class ParentComponent extends React.Component {
             <div>
                 <h3> Name: {this.state.name} </h3>
                 <AddFriend addNew={this.addFriend} />
-                <Childcomponent names={this.state.friends} />
+                {/* <ChildComponent names={this.state.friends} /> */}
+                <ChildComponent />
             </div>
         )
     }
 }
 
+/*
+ * A new AddFriend component was added to manage the new friend to be
+ * added because ParentComponent doesn't care about the new friend being
+ * added, it only cares about all of your friends as a whole (the friends
+ * Array). We've passed the addFriend method down into our AddFriend
+ * component as a prop to maintain that data is only manipulated in
+ * components that care about it.
+ */
 class AddFriend extends React.Component {
     constructor(props) {
         super(props);
@@ -66,7 +75,7 @@ class AddFriend extends React.Component {
     }
 }
 
-class Childcomponent extends React.Component {
+class ChildComponent extends React.Component {
     render() {
         /* the map method creates a new array, calls our callback on each
          * item in the array, and fills the new array with the result of
@@ -82,6 +91,9 @@ class Childcomponent extends React.Component {
             </div>
         )
     }
+}
+ChildComponent.defaultProps = {
+    names: ['this', 'is', 'default']
 }
 
 export default ParentComponent;
