@@ -19,11 +19,11 @@ Below you will find a compilation of helpful notes and React.js-related resource
 - Components can be defined either as a function that takes one argument (props) and returns a React element (JSX most likely), or as an ES6 class
 - Basic Rules to follow when deciding how to declare components
   1. Component needs access to lifecycle methods -> **Use a class**
-    - functions can't have methods and therefore can't have lifecycle methods
+      - functions can't have methods and therefore can't have lifecycle methods
   2. Component needs access to *this* -> **Use a class**
-    - function components don't have a *this* to access (it's undefined)
+      - function components don't have a *this* to access (it's undefined)
   3. Otherwise -> **Use a functional component**
-    - class components provide extra features, which, if you're not using them, make the code more complex unnecessarily
+      - class components provide extra features, which, if you're not using them, make the code more complex unnecessarily
 
 ### Component LifeCycle
 - Each component you make will have its own lifecycle events
