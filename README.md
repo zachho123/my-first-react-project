@@ -42,7 +42,6 @@ Below you will find a compilation of helpful notes and React.js-related resource
 - Can contain both presentational and container components, but usually *don't* have any DOM markup of their own (except wrapping divs), and never have styles
 - Provide the data and behavior to presentational/other components
 -  Are often stateful (tend to serve as data sources)
-- Written as class components
 
 ### Component LifeCycle
 - Each component you make will have its own lifecycle events
