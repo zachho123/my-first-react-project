@@ -2,7 +2,7 @@
 
 Below you will find a compilation of helpful notes and React.js-related resources.
 
-# Source: https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/
+## Source: https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/
 
 ## Components
 
