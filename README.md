@@ -89,4 +89,5 @@ from the parent component.
   - onSubmit
   - onChange
 
-#### *Source: https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/*
+## Sources
+- https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/
