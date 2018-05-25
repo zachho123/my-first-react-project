@@ -11,6 +11,7 @@ Below you will find a compilation of helpful notes and React.js-related resource
 - Data should either be retrieved from a component's parent component, or should be contained in the component itself
 - Every component is required to have a render method
   - The render method is a representation of what the real DOM should look like
+  - The render method should be pure, meaning that it does not modify component state, it returns the same result each time it's invoked
 - Components are made up of React elements (JSX)
   - React elements are immutable, once you create an element, you cannot change its children or attributes
 - **NOTE:** always start component names with a capital letter

@@ -1,9 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import HelloWorld from './1-helloWorld.js';
-// import HelloUser from './2-alterStateExample.js';
-// import HelloUser from './3-propsExample.js';
-import ParentComponent from './4-parentChildPropsExample.js';
+import App from './containers/App'
 
-
-ReactDOM.render(<ParentComponent />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));

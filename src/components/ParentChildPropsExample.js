@@ -92,6 +92,8 @@ class ChildComponent extends React.Component {
         )
     }
 }
+
+// Setting default prop values for ChildComponent
 ChildComponent.defaultProps = {
     names: ['this', 'is', 'default']
 }
