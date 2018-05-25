@@ -130,9 +130,12 @@ There are two ways to pass an extra parameter to an event handler, either using 
 ```
 
 ## Conditional Rendering
-Conditional rendering in React works the same as normal conditions in Javascript. Use if or conditional (ternary) operator to control which elements are rendred.
+
+### Using if / ternary
+Conditional rendering in React works the same as normal conditions in Javascript. Use if or conditional (ternary) operator to control which elements are rendered.
 
 ```JavaScript
+// Using if
 function Greeting(props) {
   const isLoggedIn = props.isLoggedIn;
   if (isLoggedIn) {
@@ -140,13 +143,47 @@ function Greeting(props) {
   }
   return <GuestGreeting />;
 }
-
-ReactDOM.render(
-  // Try changing to isLoggedIn={true}:
-  <Greeting isLoggedIn={false} />,
-  document.getElementById('root')
-);
 ```
+
+### Inline if with logical &&
+```JavaScript
+function Mailbox(props) {
+  const unreadMessages = props.unreadMessages;
+  return (
+    <div>
+      <h1>Hello!</h1>
+      {unreadMessages.length > 0 &&
+        <h2>
+          You have {unreadMessages.length} unread messages.
+        </h2>
+      }
+    </div>
+  );
+}
+```
+
+It works because in JavaScript, true && expression always evaluates to expression, and false && expression always evaluates to false. Therefore, if the condition is true, the element right after && will appear in the output. If it is false, React will ignore and skip it.
+
+### Preventing Component from Rendering
+To make a component hide itself, simply have the component return null.
+
+```JavaScript
+function ExampleComponent(props) {
+  if (someCondition) {
+    return false;
+  }
+
+  return (
+    <div>
+      Stuff to render!
+    </div>
+  )
+}
+```
+
+**Note:** returning null from a component's render method does not affect the firing of the component's lifecycle methods.
+
+
 
 
 
