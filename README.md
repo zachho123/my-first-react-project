@@ -4,34 +4,61 @@ Below you will find a compilation of helpful notes and React.js-related resource
 
 ## Components
 
+### Overview
 - Components are the building blocks of React
 - Components are collections of HTML, CSS, JS, and some internal data (properties / state)
-- Components can be defined either as a function that takes one argument (props) and returns a React element (JSX most likely), or as an ES6 class (more common)
-- Class components should always call the base constructor with props
 - Data should either be retrieved from a component's parent component, or should be contained in the component itself
 - Every component is required to have a render method
   - The render method is a representation of what the real DOM should look like
   - The render method should be pure, meaning that it does not modify component state, it returns the same result each time it's invoked
-- Components are made up of React elements (JSX)
-  - React elements are immutable, once you create an element, you cannot change its children or attributes
-- **NOTE:** always start component names with a capital letter
-  - React treats components starting with lowercase letters are treated as DOM tags (HTML) rather than a component
 - Typically, new React apps have a single App component which is the topmost parent
+- **NOTE:** always start component names with a capital letter
+  - React treats components starting with lowercase letters are treated as DOM tags (HTML) rather than a React component
 
-## ReactDOM.render()
-- ReactDOM.render() takes two arguments
-    1. the component to render
-    2. the DOM node where you want to render the component
-- You usually only have to use ReactDOM.render once in your application because rendering the most parent component will render all child components
+### Functional vs Classical Component Declarations
+- Components can be defined either as a function that takes one argument (props) and returns a React element (JSX most likely), or as an ES6 class
+- Basic Rules to follow when deciding how to declare components
+  1. Component needs access to lifecycle methods -> **Use a class**
+    - functions can't have methods and therefore can't have lifecycle methods
+  2. Component needs access to *this* -> **Use a class**
+    - function components don't have a *this* to access (it's undefined)
+  3. Otherwise -> **Use a functional component**
+    - class components provide extra features, which, if you're not using them, make the code more complex unnecessarily
 
-## The Virtual DOM
-- The virtual DOM is a JavaScript representation of the actual DOM
-- React keeps track of the difference between the current virtual DOM and with the previous virtual DOM and only updates the real DOM with the necessary changes
-- The process:
-  - Some user event changes the state of your application ->
-  - Re-render virtual DOM ->
-  - Diff previous virtual DOM with new virtual DOM ->
-  - Only update real DOM with necessary changes
+### Component LifeCycle
+- Each component you make will have its own lifecycle events
+  - Ex: You want to make an ajax request on the initial render to fetch some data
+  - Ex: You want to run some logic whenever your props change
+- You can declare special methods ("lifecycle hooks") on the component class to run some code when a component mounts and unmounts
+
+#### componentDidMount
+- Invoked once after the initial render
+- When this method is invoked, you have access to the virtual DOM
+- You access the virtual DOM via the this.getDOMNode() method
+- *This is the lifecycle event where you'll be making your AJAX requests to fetch data*
+
+#### componentWillUnmount
+- Invoked immediately before a component is unmounted from the DOM
+- *This is where you do necessary clean up*
+
+#### getDerivedStateFromProps
+- Invoked when the component mounts and whenever the props change
+- Sometimes you need to update the state of your component based on the props that are being passed in
+- This lifecycle method is passed the props and the state, and the object you return will be merged with the current state
+- *Used to update the state of a component when its prop change*
+
+### Presentational and Container Components
+- Components will be much easier to reuse and reason about if you divide them into two categories
+
+#### Presentational Components
+- Concerned with *how things look*
+- Can contain both presentational and container components, and usually have some DOM markup styles
+- Often allow containment via *this.props.children*
+- Have no dependencies on the rest of the app (ie: Flux actions)
+- Don't specify how data is loaded / manipulated
+- Receive data and callbacks exclusively via props
+- Rarely have their own state (when they do, it's UI state, not data state)
+- Are
 
 ## Receiving State from Parent Components (props, getDefaultProps)
 - When React sees a user-defined React component, it passes JSX attributes to that component as a single JavaScript object called "props"
@@ -66,27 +93,21 @@ this.setState((prevState, props) => ({
 ## Additional Fields
 - If you need to store something that doesn't participate in the data flow, feel free to add additional fields to the component class manually (instead of using props or state)
 
-## Component LifeCycle
-- Each component you make will have its own lifecycle events
-  - Ex: You want to make an ajax request on the initial render to fetch some data
-  - Ex: You want to run some logic whenever your props change
-- You can declare special methods ("lifecycle hooks") on the component class to run some code when a component mounts and unmounts
+## ReactDOM.render()
+- This method is what renders your React component(s) to the page
+- ReactDOM.render() takes two arguments
+    1. the component to render
+    2. the DOM node where you want to render the component
+- You usually only have to use ReactDOM.render once in your application because rendering the most parent component will render all child components
 
-### componentDidMount
-- Invoked once after the initial render
-- When this method is invoked, you have access to the virtual DOM
-- You access the virtual DOM via the this.getDOMNode() method
-- *This is the lifecycle event where you'll be making your AJAX requests to fetch data*
-
-### componentWillUnmount
-- Invoked immediately before a component is unmounted from the DOM
-- *This is where you do necessary clean up*
-
-### getDerivedStateFromProps
-- Invoked when the component mounts and whenever the props change
-- Sometimes you need to update the state of your component based on the props that are being passed in
-- This lifecycle method is passed the props and the state, and the object you return will be merged with the current state
-- *Used to update the state of a component when its prop change*
+## The Virtual DOM
+- The virtual DOM is a JavaScript representation of the actual DOM
+- React keeps track of the difference between the current virtual DOM and with the previous virtual DOM and only updates the real DOM with the necessary changes
+- The process:
+  - Some user event changes the state of your application ->
+  - Re-render virtual DOM ->
+  - Diff previous virtual DOM with new virtual DOM ->
+  - Only update real DOM with necessary changes
 
 ## Handling Events
 - React events are named using camelCase, rather than lowercase
@@ -119,3 +140,4 @@ from the parent component.
 ## Sources
 - https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/
 - https://reactjs.org/docs
+- https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0
