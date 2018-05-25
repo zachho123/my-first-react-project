@@ -7,6 +7,6 @@ class HelloWorld extends React.Component {
             <div>Hello World!</div>
         );
     }
-}
+};
 
-ReactDOM.render(<HelloWorld />, document.getElementById('root'));
+export default HelloWorld;

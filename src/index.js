@@ -1,13 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import run from './1-alterStateExample.js'
+import HelloWorld from './1-helloWorld.js';
+// import HelloUser from './2-alterStateExample.js';
+import HelloUser from './3-propsExample.js';
 
-class HelloUser extends React.Component {
-    render() {
-        return (
-            <div>Hello, {this.props.name}</div>
-        )
-    }
-}
 
-ReactDOM.render(<HelloUser name="Tyler" />, document.getElementById('root'));
+ReactDOM.render(<HelloUser name="hi"/>, document.getElementById('root'));

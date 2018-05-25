@@ -31,4 +31,4 @@ class HelloUser extends React.Component {
     }
 }
 
-ReactDOM.render(<HelloUser />, document.getElementById('root'));
+export default HelloUser;
