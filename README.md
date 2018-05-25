@@ -25,6 +25,25 @@ Below you will find a compilation of helpful notes and React.js-related resource
   3. Otherwise -> **Use a functional component**
       - class components provide extra features, which, if you're not using them, make the code more complex unnecessarily
 
+#### Presentational vs Container Components
+- Components will be much easier to reuse and reason about if you divide them into two categories
+
+##### Presentational Components
+- Concerned with *how things look*
+- Can contain both presentational and container components, and usually have some DOM markup styles
+- Often allow containment via *this.props.children*
+- Don't specify how data is loaded / manipulated
+- Receive data and callbacks exclusively via props
+- Rarely have their own state (when they do, it's UI state, not data state)
+- Are typically written as **functional components**
+
+##### Container Components
+- Concerned with *how things work*
+- Can contain both presentational and container components, but usually *don't* have any DOM markup of their own (except wrapping divs), and never have styles
+- Provide the data and behavior to presentational/other components
+-  Are often stateful (tend to serve as data sources)
+- Written as class components
+
 ### Component LifeCycle
 - Each component you make will have its own lifecycle events
   - Ex: You want to make an ajax request on the initial render to fetch some data
@@ -46,19 +65,6 @@ Below you will find a compilation of helpful notes and React.js-related resource
 - Sometimes you need to update the state of your component based on the props that are being passed in
 - This lifecycle method is passed the props and the state, and the object you return will be merged with the current state
 - *Used to update the state of a component when its prop change*
-
-### Presentational and Container Components
-- Components will be much easier to reuse and reason about if you divide them into two categories
-
-#### Presentational Components
-- Concerned with *how things look*
-- Can contain both presentational and container components, and usually have some DOM markup styles
-- Often allow containment via *this.props.children*
-- Have no dependencies on the rest of the app (ie: Flux actions)
-- Don't specify how data is loaded / manipulated
-- Receive data and callbacks exclusively via props
-- Rarely have their own state (when they do, it's UI state, not data state)
-- Are
 
 ## Receiving State from Parent Components (props, getDefaultProps)
 - When React sees a user-defined React component, it passes JSX attributes to that component as a single JavaScript object called "props"
@@ -141,3 +147,4 @@ from the parent component.
 - https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/
 - https://reactjs.org/docs
 - https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0
+- https://reactarmory.com/answers/es6-classes-vs-function-components
