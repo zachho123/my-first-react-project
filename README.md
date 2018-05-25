@@ -117,7 +117,38 @@ this.setState((prevState, props) => ({
 ## Handling Events
 - React events are named using camelCase, rather than lowercase
 - With JSX you pass a function as the event handler, rather than a string
+- You cannot return false to prevent default behavior in React, you must explicitly call preventDefault()
 - When you define a component using an ES6 class, a common pattern is for an event handler to be a method on the class
+- You have to be careful about the meaning of *this* in JSX callbacks, class methods are not bound by default
+
+### Passing Arguments to Event Handlers
+There are two ways to pass an extra parameter to an event handler, either using arrow functions or bind:
+
+```html
+<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+<button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+```
+
+## Conditional Rendering
+Conditional rendering in React works the same as normal conditions in Javascript. Use if or conditional (ternary) operator to control which elements are rendred.
+
+```JavaScript
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting />;
+  }
+  return <GuestGreeting />;
+}
+
+ReactDOM.render(
+  // Try changing to isLoggedIn={true}:
+  <Greeting isLoggedIn={false} />,
+  document.getElementById('root')
+);
+```
+
+
 
 ## Fundamental Aspects of React CheatSheet
 - **JSX** — Allows us to write HTML like syntax which gets transformed to lightweightJavaScript objects.

@@ -24,8 +24,8 @@ class ParentComponent extends React.Component {
             <div>
                 <h3> Name: {this.state.name} </h3>
                 <AddFriend addNew={this.addFriend} />
-                {/* <ChildComponent names={this.state.friends} /> */}
-                <ChildComponent />
+                <ChildComponent names={this.state.friends} />
+                {/* <ChildComponent /> */}
             </div>
         )
     }
