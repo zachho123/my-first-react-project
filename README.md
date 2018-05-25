@@ -65,6 +65,9 @@ Below you will find a compilation of helpful notes and React.js-related resource
 - Invoked immediately before a component is unmounted from the DOM
 - *This is where you do necessary clean up*
 
+### getDerivedStateFromProps
+- Sometimes you need to update the state of your component based on the props that are being passed in
+- This lifecycle method is passed the props and the state, and the object you return will be merged with the current state
 
 ## Fundamental Aspects of React CheatSheet
 - JSX — Allows us to write HTML like syntax which gets transformed to lightweightJavaScript objects.
