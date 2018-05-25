@@ -66,8 +66,10 @@ Below you will find a compilation of helpful notes and React.js-related resource
 - *This is where you do necessary clean up*
 
 ### getDerivedStateFromProps
+- Invoked when the component mounts and whenever the props change
 - Sometimes you need to update the state of your component based on the props that are being passed in
 - This lifecycle method is passed the props and the state, and the object you return will be merged with the current state
+- *Used to update the state of a component when its prop change*
 
 ## Fundamental Aspects of React CheatSheet
 - JSX — Allows us to write HTML like syntax which gets transformed to lightweightJavaScript objects.
