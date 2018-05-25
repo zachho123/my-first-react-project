@@ -59,11 +59,11 @@ Below you will find a compilation of helpful notes and React.js-related resource
 - Invoked once after the initial render
 - When this method is invoked, you have access to the virtual DOM
 - You access the virtual DOM via the this.getDOMNode() method
-*This is the lifecycle event where you'll be making your AJAX requests to fetch data*
+- *This is the lifecycle event where you'll be making your AJAX requests to fetch data*
 
 ### componentWillUnmount
 - Invoked immediately before a component is unmounted from the DOM
-*This is where you do necessary clean up*
+- *This is where you do necessary clean up*
 
 
 ## Fundamental Aspects of React CheatSheet
@@ -89,4 +89,4 @@ from the parent component.
   - onSubmit
   - onChange
 
-#### Source: https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/
+#### *Source: https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/*
