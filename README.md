@@ -198,6 +198,8 @@ function ExampleComponent(props) {
 ## Controlled Components
 - In HTML form elements such as <input>, <textarea>, and <select> typically maintain their own state and update it based on user input
 - In React, mutable state is typically kept in the state of a component, and only updated with setState()
+- A "controlled component" combines these two and makes the React state the "single source of truth"
+
 
 
 
