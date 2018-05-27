@@ -183,7 +183,21 @@ function ExampleComponent(props) {
 
 **Note:** returning null from a component's render method does not affect the firing of the component's lifecycle methods.
 
+## Lists and Keys
+- You can use the map function to transform arrays into list elements to render
+- We need to supply a key (special string attribute) when creating lists of elements
+- Keys help React identify which items have changed, are added, or are removed
+- Keys should ideally be unique, most often you would use IDs from your data
+  - Keys only need to be unique among siblings, they do not need to be globally unique
+- As a last resort you can use the item index as a key, however this is not recommended as issues can arise if the order of items change
+- Keys only make sense in the context of the surrounding array, a good rule of thumb is that the elements inside the map() call need keys
+- Keys aren't actually passed to your components, if you need the key value pass it explicitly as a prop with a different name
 
+**Note:** If you choose not to assign an explicit key to list items then React will default to using indexes as keys
+
+## Controlled Components
+- In HTML form elements such as <input>, <textarea>, and <select> typically maintain their own state and update it based on user input
+- In React, mutable state is typically kept in the state of a component, and only updated with setState()
 
 
 

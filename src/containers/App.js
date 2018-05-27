@@ -5,7 +5,12 @@ import AlterState from '../components/AlterStateExample';
 import PropsExample from '../components/PropsExample';
 import ParentChildExample from '../components/ParentChildPropsExample';
 import HandleEvent from '../components/HandlingEvents';
-import LoginControl from '../components/ConditionalRendering'
+import LoginControl from '../components/ConditionalRendering';
+import NumberList from '../components/RenderingLists';
+import NameForm from '../components/ControlledComponent';
+
+// For NumberList Example
+const numbers = [1, 2, 3, 4, 5];
 
 class App extends React.Component {
     render() {
@@ -28,6 +33,12 @@ class App extends React.Component {
                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                 <h2>Conditional Rendering</h2>
                 <LoginControl />
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                <h2>Rendering Lists</h2>
+                <NumberList numbers={numbers} />
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                <h2>Controlled Component</h2>
+                <NameForm />
             </div>
         );
     }
