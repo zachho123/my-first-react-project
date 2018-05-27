@@ -18,6 +18,12 @@ class NameForm extends React.Component {
         event.preventDefault();
     }
 
+    /*
+     * Since the value attribute is set on the form element, the displayed
+     * value will always be this.state.value, making the React state the source
+     * of truth. Since handleChange runs on every keystroke to update the React
+     * state, the displayed value will update as the user types.
+     */
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
@@ -25,7 +31,8 @@ class NameForm extends React.Component {
                     Name:
                     <input
                         type="text"
-                        value={this.state.value} onChange={this.handleChange}
+                        value={this.state.value}
+                        onChange={this.handleChange}
                     />
                 </label>
                 <input type="submit" value="Submit" />

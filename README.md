@@ -196,9 +196,13 @@ function ExampleComponent(props) {
 **Note:** If you choose not to assign an explicit key to list items then React will default to using indexes as keys
 
 ## Controlled Components
-- In HTML form elements such as <input>, <textarea>, and <select> typically maintain their own state and update it based on user input
+- In HTML form elements such as **input**, **textarea**, and **select** typically maintain their own state and update it based on user input
 - In React, mutable state is typically kept in the state of a component, and only updated with setState()
 - A "controlled component" combines these two and makes the React state the "single source of truth"
+- With a controlled component, every state mutation will have an associated handler function (this makes it straightforward to modify or validate user input)
+
+### Alternatives to Controlled Components
+It can become tedious using controlled components since you need to write an event handler for every way your data can change and pipe all the input state through a React component, in these situations you may want to use an "uncontrolled component", an alternative technique for implementing input forms
 
 
 
