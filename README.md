@@ -204,7 +204,10 @@ function ExampleComponent(props) {
 ### Alternatives to Controlled Components
 It can become tedious using controlled components since you need to write an event handler for every way your data can change and pipe all the input state through a React component, in these situations you may want to use an "uncontrolled component", an alternative technique for implementing input forms
 
-
+## Lifting State Up
+- In React, sharing state is accomplished by moving it up to the closest common ancestor of that components that need it
+- There should be a single "source of truth" for any data that changes in a React application
+- If something can be derived from either props or state, it probably shouldn't be in the state
 
 
 ## Fundamental Aspects of React CheatSheet

@@ -8,6 +8,7 @@ import HandleEvent from '../components/HandlingEvents';
 import LoginControl from '../components/ConditionalRendering';
 import NumberList from '../components/RenderingLists';
 import NameForm from '../components/ControlledComponent';
+import LiftState from '../components/LiftingState';
 
 // For NumberList Example
 const numbers = [1, 2, 3, 4, 5];
@@ -39,6 +40,9 @@ class App extends React.Component {
                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                 <h2>Controlled Component</h2>
                 <NameForm />
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                <h2>LiftingState</h2>
+                <LiftState />
             </div>
         );
     }
