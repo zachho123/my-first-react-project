@@ -209,6 +209,35 @@ It can become tedious using controlled components since you need to write an eve
 - There should be a single "source of truth" for any data that changes in a React application
 - If something can be derived from either props or state, it probably shouldn't be in the state
 
+## Thinking in React
+Start with a mock of what the website should look like
+
+### Step 1: Break the UI into a Component Hierarchy
+- Draw boxes around every component and give them all names
+- Components that appear inside another component should appear as a child component in the hierarchy
+
+### Step 2: Build a Static Version in React
+- Build a version that takes your data model and renders the UI but has no interactivity
+- Don't use state at all to build this static version, state is reserved for interactivity (data that changes over time)
+- On larger projects, it's usually easier to build bottom-up and write tests as you build
+- The components should only have a render method (for this static version)
+
+### Step 3: Identify the Minimal-Complete Representation of the UI State
+- Key to this step is DRY: Don't Repeat Yourself
+- Figure out absolute minimum state your application needs and compute everything else you need on-demand
+- When determining if something needs to be state or not, ask:
+  1. Is it passed in from a parent via props? If so, probably isn't state
+  2. Does it remain unchanged over time? If so, it probably isn't state
+  3. Can you compute it based on any other state or props in the component? If so, it isn't state
+
+### Step 4: Identify Where Your State Should Live
+- This is often the most challenging part
+- For each piece of state in your application:
+  - Identify every component that renders something based on that state
+  - Find a common owner component (a single component above all the components that need the state in the hierarchy)
+  - Either the common owner or another component higher up in the hierarchy should own the state
+  - If you can't find a component where it makes sense to own the state, create a new component simply for holding the state and add it somewhere in the hierarchy above the common owner component
+
 
 ## Fundamental Aspects of React CheatSheet
 - **JSX** — Allows us to write HTML like syntax which gets transformed to lightweightJavaScript objects.
