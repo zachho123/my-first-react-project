@@ -5,19 +5,19 @@ Below you will find a compilation of helpful notes and React.js-related resource
 ## Components
 
 ### Overview
-- Components are the building blocks of React
-- Components are collections of HTML, CSS, JS, and some internal data (properties / state)
-- Data should either be retrieved from a component's parent component, or should be contained in the component itself
+- Are the building blocks of React
+- Are collections of HTML, CSS, JS, and some internal data (properties / state)
+- Data should be contained in the component that uses it, or be passed down from the parent component
 - Every component is required to have a render method
   - The render method is a representation of what the real DOM should look like
-  - The render method should be pure, meaning that it does not modify component state, it returns the same result each time it's invoked
+  - The render method should not modify component state
 - Typically, new React apps have a single App component which is the topmost parent
 - **NOTE:** always start component names with a capital letter
   - React treats components starting with lowercase letters are treated as DOM tags (HTML) rather than a React component
 
 ### Functional vs Classical Component Declarations
-- Components can be defined either as a function that takes one argument (props) and returns a React element (JSX most likely), or as an ES6 class
-- Basic Rules to follow when deciding how to declare components
+- Components can be defined as a function or an ES6 class
+- Function or Class Guide Rules:
   1. Component needs access to lifecycle methods -> **Use a class**
       - functions can't have methods and therefore can't have lifecycle methods
   2. Component needs access to *this* -> **Use a class**
@@ -26,11 +26,10 @@ Below you will find a compilation of helpful notes and React.js-related resource
       - class components provide extra features, which, if you're not using them, make the code more complex unnecessarily
 
 #### Presentational vs Container Components
-- Components will be much easier to reuse and reason about if you divide them into two categories
 
 ##### Presentational Components
 - Concerned with *how things look*
-- Can contain both presentational and container components, and usually have some DOM markup styles
+- Usually have some DOM markup styles
 - Often allow containment via *this.props.children*
 - Don't specify how data is loaded / manipulated
 - Receive data and callbacks exclusively via props
@@ -44,10 +43,8 @@ Below you will find a compilation of helpful notes and React.js-related resource
 -  Are often stateful (tend to serve as data sources)
 
 ### Component LifeCycle
-- Each component you make will have its own lifecycle events
-  - Ex: You want to make an ajax request on the initial render to fetch some data
-  - Ex: You want to run some logic whenever your props change
-- You can declare special methods ("lifecycle hooks") on the component class to run some code when a component mounts and unmounts
+- Each component has its own lifecycle events
+- You can declare "lifecycle hook" methods to run code on component mounting/unmounting
 
 #### componentDidMount
 - Invoked once after the initial render
@@ -66,7 +63,7 @@ Below you will find a compilation of helpful notes and React.js-related resource
 - *Used to update the state of a component when its prop change*
 
 ## Receiving State from Parent Components (props, getDefaultProps)
-- When React sees a user-defined React component, it passes JSX attributes to that component as a single JavaScript object called "props"
+- React passes JSX attributes to components as a single JavaScript object called "props"
 - You should handle state in the highest-most parent component which needs to use the specific data
 - Try to always keep it so that wherever the data lives, is also where you manipulate the data
   - All getter/setter methods for a piece of data should always be in the same component where that data was defined
