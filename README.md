@@ -238,6 +238,11 @@ Start with a mock of what the website should look like
   - Either the common owner or another component higher up in the hierarchy should own the state
   - If you can't find a component where it makes sense to own the state, create a new component simply for holding the state and add it somewhere in the hierarchy above the common owner component
 
+### Add Inverse Data Flow
+- Update state to reflect user input
+- Remember that components should only alter their own state
+- Higher-up components pass callbacks to lower ones that fire when state should be updated
+
 
 ## Fundamental Aspects of React CheatSheet
 - **JSX** — Allows us to write HTML like syntax which gets transformed to lightweightJavaScript objects.
